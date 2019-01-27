@@ -1,0 +1,162 @@
+
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+\usepackage{listings}	
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+% correct bad hyphenation here
+
+
+\begin{document}
+\title{Critique of THeME Paper \\
+for CS5371 Soft Test for Mobile \& Emb Sys}
+
+\author{\IEEEauthorblockN{Jeremy Solmonson}
+\IEEEauthorblockA{School of Security Engineering\\
+University of Colorado at Colorado Springs\\
+Colorado Springs, CO 80922\\
+Email: jsolmons@uccs.edu}}
+
+\maketitle
+
+\begin{abstract}
+This is paper is a critique of "THeME: A System for Testing by Hardware Monitoring Events." In accordance with homework 0 requirements the critique will be based on: suggestion for acceptance, summary of paper, positive points, negatives points, and potential future work. 
+\end{abstract}
+
+\IEEEpeerreviewmaketitle
+
+
+\section{Suggestion for Acceptance}
+I would strongly accept this paper. It provides a valuable contribution on options for testing within resource constrained environments.
+
+\section{Summary of Paper}
+Software testing techniques, such as test coverage analysis, require additional resources to perform the analysis. While this is usually accomplished through instrumentation, the overhead can be detrimental in a resource constrained environment. Instead of using instrumentation, hardware mechanisms can be used to augment the existing hardware and prevent additional code growth. Further multi-core processors can expedite the test. A design was created, Testing by Hardware Monitoring Events (THeME), to better understand how hardware can improve efficiencies in testing. 
+
+\section{Positive Points}
+Easy to read and follow. The paper flowed quite well and explained the analysis along the way. Difficult concepts were well explained in relation to the papers contributions. For example, 3.2.1 Access via Polling could be removed, but explained the next session and why Interrupt Driven Access is more efficient. 
+
+The paper clearly identified the issues and contributions of the research. The papers contributions were listed in the introduction and bulleted format which is easy to identify. Further, the experiments objectives were also listed in bulleted format. The conclusion summarized the experiments results very neat and orderly.
+
+The reason to conduct the experiment and the method taken seemed appropriate to solve the underlying question: Is a hardware approach more efficient than instrumentation? For the system under test, yes, it is more efficient. To become more definitive, a larger sample size of various architectures would need to be further explored.
+
+\section{Negative Points}
+
+In section 2.1, Cache Misses (CM) and Branch Instruction Retired (BIR) are mentioned, but not further discussed. Instead the paragraph moves to LBRs which are explained and further discussed. Would recommend either removing CM or BIR or further elaborating on their involvement.
+
+ 
+\section{Potential Future Work}
+While this testing works on the SPEC2006, security related code such as obfuscation my hide the potential branch options. For example consider the below code.
+\begin{lstlisting}
+cmp EAX, ECX
+jne EAX
+jmp EBX
+\end{lstlisting}
+The values in EAX and EBX must be known prior to analysis to the branch options. These values may vary based on previously executed branches leading to branch explosion. If the values are unknown, then this section of code will be examined on a conditional basis and code coverage can not be verified. 
+As a result, a further examination may be useful on malicious programs.
+
+Another potential area of exploration could be on unknown binaries. Specifically, could a similar process be executed without debugging information or optimizations? If so, then embedded systems that have malicious content could be examined as well. The experiment could compare known compiled binaries and perform similar testing. If so, this would be useful for black box security testing.
+% references section
+%\nocite{*}
+%\bibliographystyle{IEEEtran}
+%\bibliography{Week3}
+
+
+%\end{thebibliography}
+
+
+\end{document}
+
+
