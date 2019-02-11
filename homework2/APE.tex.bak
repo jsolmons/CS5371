@@ -1,0 +1,166 @@
+
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+\usepackage{listings}	
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+% correct bad hyphenation here
+
+
+\begin{document}
+\title{APE: An Annotation Language and Middleware for Energy-Efficient Mobile App Development Paper\\
+for CS5371 Soft Test for Mobile \& Emb Sys}
+
+\author{\IEEEauthorblockN{Jeremy Solmonson}
+\IEEEauthorblockA{School of Security Engineering\\
+University of Colorado at Colorado Springs\\
+Colorado Springs, CO 80922\\
+Email: jsolmons@uccs.edu}}
+
+\maketitle
+
+\begin{abstract}
+This is paper is a critique of "APE: An Annotation Language and Middleware for Energy-Efficient Mobile Application Development." In accordance with homework 2 requirements the critique will be based on: suggestion for acceptance, summary of paper, evaluation of paper, positive points, negatives points, and potential future work. 
+\end{abstract}
+
+\IEEEpeerreviewmaketitle
+
+\section{Suggestion for Acceptance}
+I would strongly recommend this paper. The contributions are directly applicable to challenges within current mobile application development. While the experiment could be expanded to additional applications to provide a stronger sample size, this limitation should not hinder publication.
+
+\section{Summary of Paper}
+Continuous Runtime Mobile (CRM) applications consume a larger volume of battery life due to their persistent need for resources. The current methods to provide efficient battery consumption are implemented by the programmer in low-level (controlling the individual resource) and system level (synchronizing between resources) optimizations. By deferring resource use to more efficient times (defined by the programmer), batter life can  achieve higher longevity compared to no coordination of resources. APE employs Java Annotations to provides in-code modifiers to adjust energy consumption. This allows the programmer to provide adjustments to resources based on events. Employing this technique helped lower energy consumption in an application Citisense. 
+
+\section{Evaluation}
+This paper provides a valuable contribution to the energy savings research. Allowing the programmer to access a standardized API to control power consumption is both usable and efficient. 
+
+While this paper does provide a valuable contribution to the mobile energy efficient research, the evaluation only revolves around a single application, Citisense. As Citisense was also developed by the authors, it begs the question if APE was only developed to support the Citisense application. If so, this explains the impressive results of energy efficiency. While I do not think that was the authors intent, and this doesn't seem to impede the papers contributions/results, it would be more impartial to test on a separate application. As a result, this may not be considered "empirical evidence."
+
+Further the test cases were extremely limited. The application was tested with immediate wifi connectivity - with and without APE. The tests did not include situations with no wifi nor mobile data service was available. This would be beneficial to see the energy efficiencies in non connected environments. Further partial connected environments could be examined with quantifiable weak mobile data service and strong mobile data service. Also, APE enhanced applications could be given to participants to use the mobile devices under real world conditions. These experiments would provide additional validity to the authors contributions. 
+
+The impressive portion of this paper is the ability to logically design energy efficient algorithms using this frameworks. Finite state machines can be designed to 
+
+\section{Positive Points}
++ Provides real world benefits that programmers could implement immediately to increase battery efficiency. 
+
++ The ability to design a finite state machine and provide functional coding examples is a plus. Good use of examples.
+
++ Recent research is well cited and compares/contrasts to the  proposed APE enhancement. 
+
+\section{Negative Points}
+- Small sample size (Citisense) to test the APE framework. Unknown data on the actual real-world battery efficiency. 
+
+- More test cases should be examined.  
+
+\section{Potential Future Work}
+The first area of research would be to validate the APE functions in real world conditions. If APE drains the batter in austerer conditions (such as mountain ranges with limited connectivity) the this solution isn't practical. The need to verify the author's contributions for additional environments is needed. 
+
+The other main area for future research is expanding the APE framework for optimization. This will help answer questions similar to, "what is the optimal time a resource should wait before sending data (1 ms, 1 sec, 1 min, 1 hour, etc.)?" The API can be expanded to support additional events or resource synchronization. Further, research can be explored to provide the most energy efficient conditions. These conditions can be compared against each other with standardized results. 
+
+ 
+
+% references section
+%\nocite{*}
+%\bibliographystyle{IEEEtran}
+%\bibliography{Week3}
+
+
+%\end{thebibliography}
+
+
+\end{document}
+
+
