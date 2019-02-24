@@ -1,0 +1,160 @@
+
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+\usepackage{listings}	
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+% correct bad hyphenation here
+
+
+\begin{document}
+\title{AsDroid: Detecting Stealthy Behaviors in Android
+Applications by User Interface and Program Behavior
+Contradiction Critique Paper\\
+for CS5371 Soft Test for Mobile \& Emb Sys}
+
+\author{\IEEEauthorblockN{Jeremy Solmonson}
+\IEEEauthorblockA{School of Security Engineering\\
+University of Colorado at Colorado Springs\\
+Colorado Springs, CO 80922\\
+Email: jsolmons@uccs.edu}}
+
+\maketitle
+
+\begin{abstract}
+This is paper is a critique of "AsDroid: Detecting Stealthy Behaviors in Android Applications by User Interface and Program Behavior Contradiction." In accordance with homework 3 requirements the critique will be based on: suggestion for acceptance, summary of paper, evaluation of paper, positive points, negatives points, and potential future work. 
+\end{abstract}
+
+\IEEEpeerreviewmaketitle
+
+\section{Suggestion for Acceptance}
+I would strongly recommend to accept this paper. The primary idea useful in the security realm and can be build upon for future applications. 
+
+\section{Summary of Paper}
+Finding hidden malware within Android application remains challenging because anyone, including hackers, can publish an application that contains unintended features. The most common features are high priced phone calls, premium SMS text messages, and http request connections. These features are executing without the operators permission or knowledge. By associating the function calls behavior with the overall program intent, stealthy malware can be identified through weak associations (i.e. having a calculator make an http connection). Asdroid was developed to identify these weak associations (intent vs. behavior) and can assist in finding stealthy malware.
+
+\section{Evaluation}
+The authors contributions to finding hidden (stealthy) malware is extremely useful to the security community. Most malware is identified through signatures which are after the fact detections. The authors propose a different method by analyzing the functions intent and comparing the functions behavior to that intent. If a mismatch exists, the program is flagged as suspicious. With more work, this could be a third method for malware identification beyond signature and heuristic bases detection. 
+
+The AsDroid application had a 79.5\% success rate on identifying the stealthy behavior within applications. Considering this is an introductory tool to correlate behavior and intent, the results are noteworthy. 
+
+\section{Positive Points}
++ Novel idea to match program intent vs. program behavior to find malicious programs
+
++ The datalog logic was useful to build on top
+
+\section{Negative Points}
+- 
+
+\section{Potential Future Work}
+While no future work was directly given within the paper, expansion of this feature could continue. First, more intents could be integrated into the datalog and toolset to encompase a larger number of stealthy behaviors. This would broaden the application beyond SMS, calls, and http requests. Perhaps including pictures, contracts, data files and other information that is more sensitive to the user. 
+
+Additionally, anti-virus and intrusion detection system vendors would be interested in this technology. The primary types of malicious detection is signature based (after the fact) and heuristic based (comparing against previous behavior), with signature based being he primary detection method within current industry use. This paper could broaden the idea of malicious to an intent vs. behavior correlation. 
+
+ 
+
+% references section
+%\nocite{*}
+%\bibliographystyle{IEEEtran}
+%\bibliography{Week3}
+
+
+%\end{thebibliography}
+
+
+\end{document}
+
+
