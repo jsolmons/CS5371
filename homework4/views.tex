@@ -1,0 +1,161 @@
+
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+\usepackage{listings}	
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+% correct bad hyphenation here
+
+
+\begin{document}
+\title{Viewpoints and Views in Hardware Platform Modeling for Safe Deployment\\
+for CS5371 Soft Test for Mobile \& Emb Sys}
+
+\author{\IEEEauthorblockN{Jeremy Solmonson}
+\IEEEauthorblockA{School of Security Engineering\\
+University of Colorado at Colorado Springs\\
+Colorado Springs, CO 80922\\
+Email: jsolmons@uccs.edu}}
+
+\maketitle
+
+\begin{abstract}
+This is paper is a critique of "Viewpoints and Views in Hardware Platform Modeling for Safe Deployment." In accordance with homework 4 requirements the critique will be based on: suggestion for acceptance, summary of paper, evaluation of paper, positive points, negatives points, and potential future work. 
+\end{abstract}
+
+\IEEEpeerreviewmaketitle
+
+\section{Suggestion for Acceptance}
+I would recommend to reject this paper with significant revisions. The paper was poorly written and could have been accomplished with a survey. 
+
+\section{Summary of Paper}
+This paper attempts to gain insight into stakeholder views by modeling a hardware platform. Due to the increasing number of Electron Control Units (ECU) in modern cars, securing passenger safety is becoming increasingly difficult. To demonstrate, the authors' designed an Arduino based system that communicates between vehicles. This application can provide (crash reports, road conditions, sudden stops, etc.) to near-by vehicles. The issue with this approach is ensuring the integration of components between hardware and software. To solve this issue, the authors' use a custom model based view. Their model based view provides insights into stakeholders viewpoints for creating these type of systems. This identifies the potential software resources that can be integrated into the hardware platform. 
+
+\section{Evaluation}
+I understand this research was funded by German Federal Ministry of Education and Research and as a result, the authors may have been limited to a specific methodology or means to accomplish their research. As a result, this critique should not be interpreted as a negative reflection on the author's approach even though it will be discussed. 
+
+While the authors took a unique approach to gain insight into stakeholder views, their method is based on a modeling system which is flawed. A modeling approach helps understanding the overall system and can provide better insight into the various components. However, a model doesn't provide insight into people's intentions. The intent of the stakeholders can be vastly different based on the mission of the overall organization. Some of the stakeholders not identified in this paper were customers (people using the product), investors (people funding the product), management (people overseeing he product), designers (people drawing the product), testers (people quality assuring the product), and more. Once could argue that a survey sent to the identified stakeholders could have accomplished a similar goal. A survey may have identified additional insights the authors could not foresee in their model. My assumption is a survey was not possible due to requirements from their research funding sources. 
+
+The other area that needs improvement is the overall readability of this paper. To quote one of the first lines within their abstract, "existing approaches for the definition of a hardware platform do not address the different stakeholder’s concerns and do not provide a systematic method." This sentence implies that the definition of a "hardware platform" should address stakeholder concerns and provide a systematic method. I do not think this is correct. A definition, by definition, is supposed to provide a statement of exact meaning. A definition should be limited to the describing the word or phrase to it's most essential properties. By providing extra details within a definition construes the term to another meaning. A "systematic method" and "stakeholder concerns" are extra details that should not be included within the definition of "hardware platform."
+
+Additionally, the authors' mentioned other approaches (Autosar and MARTE) they did empirically evaluate their approach to the alternative approaches. Yes, the authors' approach is unique and different from the alternatives. Their approach provides extra details such as stakeholder insight and explicit attributes. However, it has not been proven their approach is better than the alternatives. Further, its unknown under which conditions their approach is superior to the others. Case studies should be performed to determine when their approach is most advantageous. 
+
+\section{Positive Points}
++ Attempted to gain alternative insights using a modeling process. 
+
+\section{Negative Points}
+- Poor design. Same results could be achieved with surveys.
+
+- Low readability. The paper needs better flow and cohesion.
+
+- Minimal comparisons to alternative approaches. 
+
+\section{Potential Future Work}
+The authors' identified a meta-model which supports software instances to the hardware platform. Additionally, they want to extend the HPDL to other analysis techniques. 
+ 
+
+% references section
+%\nocite{*}
+%\bibliographystyle{IEEEtran}
+%\bibliography{Week3}
+
+
+%\end{thebibliography}
+
+
+\end{document}
+
+
