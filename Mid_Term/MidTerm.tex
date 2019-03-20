@@ -1,0 +1,230 @@
+
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+\usepackage{listings}	
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+% correct bad hyphenation here
+
+
+\begin{document}
+\title{Mid-Term\\
+Binary Function Fuzzer (BFF) \\
+for CS5371 Soft Test for Mobile \& Emb Sys}
+
+\author{\IEEEauthorblockN{Jeremy Solmonson}
+\IEEEauthorblockA{School of Security Engineering\\
+University of Colorado at Colorado Springs\\
+Colorado Springs, CO 80922\\
+Email: jsolmons@uccs.edu}}
+
+\maketitle
+
+\begin{abstract}
+Vulnerability mitigation is essential for application development organizations. Without the ability to timely find and mitigate software vulnerabilities, computer attacks will use the underlying weakness to take advantage of a computer system. Finding vulnerabilities as early as possible within the Software Development Life Cycle (SDLC), is the most cost efficient approach for application security. Unfortunately, most vulnerability analysis tools assess the software against the entire system. As a result, entire program must be completely written before the first vulnerability assessment is conducted. To integrate vulnerability identification earlier within the SDLC, we developed the Binary Function Fuzzer (BFF) tool. This tool allows software developers to integrate vulnerability identification within their unit tests and subsequently fixing the underlying issue. Additionally by bringing vulnerability identification to the individual developer enables faster mitigation strategies and stronger code ownership. 
+\end{abstract}
+
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+The process of reducing the vulnerabilities within software is extremely time intensive because programs are becoming larger and more complex. These complex program require extra scrutiny as the underlying logic may not be well known or well tested. Without through testing, vulnerabilities may be overlooked and released into the final program. Additionally, commercial software developers are rewarded for releasing their products as quickly as possible, which can limit the rigorous testing needed to reach hard-to-find vulnerabilities. 
+
+Exploitable vulnerabilities are extremely concerning for software development organizations. An exploitable vulnerability allows a computer attacker to use the underlying software in unintended methods. An attacker that can insert their own instructions as a substitute for the original programs is said to achieve Remote Code Execution (RCE). This can be considered the worst type of vulnerability as it allows the attack to execute their instructions up to the privileges of the application. For system services or processes that run with elevated permission, a RCE vulnerability allows the attacker complete control of the system. Testing for vulnerabilities on a continual basis reduces the potential for severely exploitable vulnerabilities.
+
+To meet the organizational goals of balancing time with software quality, testing process is integrated into the earliest stages of software development known as unit tests. Unit tests allow the developer to ensure their features work as intended. However, unit tests do not usually include vulnerability testing. The problem with testing for vulnerabilities at the unit level is the time required to perform repetitive tests and observing unintended behavior. For large programs, execution from beginning to end can be severely time intensive. 
+
+To save time during testing, developers usually write units tests to ensure the successful functionality of their code. Writing tests that perform multiple failures is an after thought or non-existent practice. However, by writing tests that ensure a fault results in graceful program shutdown should be an integral part of software development. By augmenting the testing procedures within a unit level fuzzer allows the developers to identify vulnerabilities in a timely manner. In this paper, we discuss a new program called Binary Function Fuzzer (BFF), that can be used at the unit test level to search for vulnerabilities in individual units of code. This allows security testing to be integrated at the lowest level of software development. By assisting software developers as they write the code, security vulnerabilities can be identified and fixed earlier within the SDLC. The final software product will have reduced vulnerabilities.
+
+The problem with fuzzing unit inputs is their unreliability due to manipulations by previous blocks of code. For instance, if a program first checks the user input for non-ascii characters and ensures the length is less than a maximum amount, then these characteristics are followed into the subsequent execution blocks. A unit level vulnerability fuzzer should observe these constraints and inject inputs that are consistent with the input the program would receive. 
+
+Continually fuzzing inputs into individual functions poses environmental challenges. If the execution environment depends on specific variables, then the program needs to maintain the state of those variables in further testing. Take a file for instance, if the function enters with the current file pointer at a specific location within the file, the variable should returned to the same spot after the test completes. If the pointer is not returned, the future tests may be unreliable. This same logic is true for dynamically allocated memory, the current stack, and registers. Any block level test needs to be aware of saving the non-input variables for further execution.
+
+The BFF tool solve the above problems by providing a fuzzing capability that is integrated into unit level testing. This reduces the overall time required to test the system as the individual blocks of code are tested during development. Additionally, only the code up to the current function is analyzed. Alternative execution paths are not assessed. This allows the developer to better understand their integration into the current program. Further, by using a control flow graph with taint analysis, the BFF tool is able to identify input constraints and pass those to the subsequent fuzzer. 
+
+This paper provides the following contributions:
+\begin{itemize}
+\item Introduces the BFF program for fuzzing individual functions within the resulting binary
+\item A method that enables software developers to incorporate vulnerability identification within unit tests
+\end{itemize}
+
+
+\section{What you need to know for the problem? (Background)}
+Below is a quick list of topics that is needed for background knowledge.
+
+\begin{itemize}
+\item Taint Analysis
+\item Function Call Interception
+\item Concolic testing / Symbolic Execution
+\item Control Flow Graph
+\item Dynamic Analysis
+\item Static Analysis
+\end{itemize}
+
+The main idea for this paper is to fuzz a select portion of a target program. By fuzzing a subset of the entire program, vulnerabilities can be identified in a deeper portion of the code. Usually fuzzers that locate hard to find, or deep, bugs can only run a few individual programs [cite]. The scalability of these tools can be overcome by analyzing the resulting file. 
+
+To abstract a portion of the program into a subset of the program requires Function Call Interception (FCI) [cite]. This allows a second program to use instrumentation by substituting, or modifying, the underlying main program. By modifying the main program, a developer can gain deep insight into a portion target program behavior. FCI allows the developer to substitute instructions or data variables to alter the main programs execution. While used for mostly debugging purposes, this can be extended to fuzzing.
+
+Fuzzing is injecting semi-valid inputs into a target program with the intent to find bugs. This technique has been an area of recent research [cite] to fund unknown vulnerabilities. One of the problems with fuzzing is executing deep into the program to find hard to reach bugs. This issue has been partly solved with symbolic execution and constraint solvers[cite]. However, the problem still remains due to resource exhaustion. As programs become larger and more complex, more resources are needed to fuzz deeper into the program. One method to overcome this challenge is to allow the developer to identify areas of interest to fuzz. By fuzzing a portion of the program, the time needed to test can be significantly reduced. Further, this technique can be integrated into the software development process. Fuzzing a software feature as it becomes available will lead to higher quality coding practices. 
+
+To assist the developer further, taint analysis is able to identify user inputs and mark, or taint, them as untrusted. Following these variables within a program can identify execution paths that leads to user triggered bugs. The execution paths can be traced using static or dynamic analysis. Static analysis allows the tester to view the underlying program logic, commonly through a disassembler. The program logic can be further analyzed through a Control Flow Graph (CFG). The combination of static analysis and a CFG allows the user to view program execution through the basic blocks of code. As an analogy, the static analysis CFG view provide a road-map of the underlying program, while dynamic analysis drives down the road map. Dynamic analysis assesses a program during execution and provides relevant information back to the user. During dynamic analysis a program can be halted, modified by changing memory contents or registers, and then continue executing. This allows a user to assess different combinations to trigger function execution. By combining a control flow graph and tainting the input variables, a user is able to visually identify areas of potential concern within an application. Then using dynamic analysis, these input paths can be executed and observed in real time to provide further information. 
+
+The one issue with dynamic analysis is finding the right combination of inputs to execute a specific path. To overcome this challenge, symbolic execution with constraint solvers is used to identify inputs for path execution. By using a constraint solver to find the conditions for branch execution, a single execution path can be identified. This enables a repeatable process to narrow down a source of program feature. One tool in recent research that performs this activity is Angr [cite]. Angr is a binary analysis tool that is modifyable through the python programming interface. By adding to this exisitng tools, a program can be created to limit the scope of binary execution to a single path.
+
+Combining the above techniques allows a software developer to fuzz their individual software feature. 
+
+\section{How does this relate to others work? (Related Work)}
+Angr is a binary analysis tool that allows a program to use the output of Angr into a python program. [cite]
+
+Driller is a fuzzer that uses symbolic execution to find hard to reach bugs. [cite]
+
+Fuzzing State of the Art outlines problems within current fuzzing tools [cite]
+
+TaintTrace flow tracing with dynamic binary rewrite [cite]
+
+Concolic Execute Fuzzing Based on Control-Flow Analysis [cite]
+
+Static program analysis assisted dynamic taint tracking for software vulnerability discovery [cite]
+
+A binary analysis approach to retrofit security in input parsing routines [cite]
+
+\section{Experiment Design}
+N/A for this assignment
+
+The following steps are the design of this program
+\begin{enumerate}
+\item Create a Control Flow Graph (CFG) to trace the execution of the program (static analysis)
+\item Use taint analysis to trace the program inputs throughout the CFG from step 1
+\item Identify a function (or selection of binary) to fuzz within the program
+\item Execute the program upto the entry of the selected function (or selection of binary) from step 3 
+\item Save the environment state (registers, memory addresses, files, etc.) for use within the next step
+\item Identify input variables that are worthwhile to fuzz (preferably from step 2)
+\item Use a fuzzer to loop through the saved state and fuzz the desired variables while executing the selected function (dynamic analysis)
+\item Record identified vulnerabilities
+\end{enumerate}
+
+Once the BFF tool is created the experiment will be conducted as follows. 
+
+This experiment was conducted with the first 100 programs in the Juliet test suite.
+
+The BFF tool requires that a specific unit of code is selected for test. 
+
+Further, the BFF tool was tested against code that was likely to contain no vulnerabilities. The purpose of this test was to assess the false positive rate.
+
+Each of the tests where the BFF tool identified a vulnerable application, a manual test was performed to verify the correctness of the found vulnerability.
+
+For each application, we recorded the following data points.
+\begin{itemize}
+\item Start time
+\item Time to first vulnerability identification
+\item Number of identified vulnerabilities
+\item Number of correctly identified vulnerabilities
+\item Number of incorrect identified vulnerabilities
+\item Number of non-identified vulnerabilities
+\item Sequence of input to trigger each vulnerability
+\end{itemize}
+
+
+\section{What do you discover? (Results)}
+N/A for this assignment
+
+% references section
+\nocite{*}
+\bibliographystyle{IEEEtran}
+\bibliography{5371Proj1}
+
+\end{document}
+
+
