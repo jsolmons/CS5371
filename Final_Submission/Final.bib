@@ -1,0 +1,237 @@
+
+@inproceedings{ji_coming_2018,
+	title = {The Coming Era of {AlphaHacking}?: A Survey of Automatic Software Vulnerability Detection, Exploitation and Patching Techniques},
+	doi = {10.1109/DSC.2018.00017},
+	shorttitle = {The Coming Era of {AlphaHacking}?},
+	abstract = {With the success of the Cyber Grand Challenge ({CGC}) sponsored by {DARPA}, the topic of Autonomous Cyber Reasoning System ({CRS}) has recently attracted extensive attention from both industry and academia. Utilizing automated system to detect, exploit and patch software vulnerabilities seems so attractive because of its scalability and cost-efficiency compared with the human expert based solution. In this paper, we give an extensive survey of former representative works related to the underlying technologies of a {CRS}, including vulnerability detection, exploitation and patching. As an important supplement, we then review several pioneer studies that explore the potential of machine learning technologies in this field, and point out that the future development of Autonomous {CRS} is inseparable from machine learning.},
+	eventtitle = {2018 {IEEE} Third International Conference on Data Science in Cyberspace ({DSC})},
+	pages = {53--60},
+	booktitle = {2018 {IEEE} Third International Conference on Data Science in Cyberspace ({DSC})},
+	author = {Ji, T. and Wu, Y. and Wang, C. and Zhang, X. and Wang, Z.},
+	date = {2018-06},
+	keywords = {Computer bugs, Software, Static analysis, Security, security of data, Data models, learning (artificial intelligence), machine learning, vulnerability detection, Analytical models, automated system, automatic software vulnerability detection, Autonomous {CRS}, Autonomous Cyber Reasoning System, {CGC}, cost-efficiency, Cyber Grand Challenge, cyber reasoning system, {DARPA}, Fuzzing, human expert based solution, inference mechanisms, machine learning technologies, patch software vulnerabilities, software reliability, vulnerability exploitation, vulnerability patching},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\Standard\\Zotero\\storage\\6YU8EWT4\\8411838.html:text/html;IEEE Xplore Full Text PDF:C\:\\Users\\Standard\\Zotero\\storage\\5JL8C359\\Ji et al. - 2018 - The Coming Era of AlphaHacking A Survey of Autom.pdf:application/pdf}
+}
+
+@article{she_neuzz:_2018,
+	title = {{NEUZZ}: Efficient Fuzzing with Neural Program Learning},
+	url = {http://arxiv.org/abs/1807.05620},
+	shorttitle = {{NEUZZ}},
+	abstract = {Fuzzing has become the de facto standard technique for finding software vulnerabilities. However, even the state-of-the-art fuzzers are not very efficient at finding hard-to-trigger software bugs. Coverageguided evolutionary fuzzers, while fast and scalable, often get stuck at fruitless sequences of random mutations. By contrast, more systematic techniques like symbolic and concolic execution incur significant performance overhead and struggle to scale to larger programs. We design, implement, and evaluate {NEUZZ}, an efficient fuzzer that guides the fuzzing input generation process using deep neural networks. {NEUZZ} efficiently learns a differentiable neural approximation of the target program logic. The differentiability of the surrogate neural program, unlike the original target program, allows us to use efficient optimization techniques like gradient descent to identify promising mutations that are more likely to trigger hard-to-reach code in the target program.},
+	journaltitle = {{arXiv}:1807.05620 [cs]},
+	author = {She, Dongdong and Pei, Kexin and Epstein, Dave and Yang, Junfeng and Ray, Baishakhi and Jana, Suman},
+	urldate = {2018-09-21},
+	date = {2018-07-15},
+	langid = {english},
+	eprinttype = {arxiv},
+	eprint = {1807.05620},
+	keywords = {Computer Science - Cryptography and Security, Computer Science - Machine Learning},
+	file = {She et al. - 2018 - NEUZZ Efficient Fuzzing with Neural Program Learn.pdf:C\:\\Users\\Standard\\Zotero\\storage\\VK23EFRS\\She et al. - 2018 - NEUZZ Efficient Fuzzing with Neural Program Learn.pdf:application/pdf}
+}
+
+@inproceedings{li_concolic_2015,
+	title = {Concolic Execute Fuzzing Based on Control-Flow Analysis},
+	doi = {10.1109/CIS.2015.99},
+	abstract = {This paper proposes a method which utilizing taint analysis to reduce the unnecessary analysis routine, concentrating on the control-flow altering input using concolic (concrete and symbolic) execution procedure. A prototype, Concolic Fuzz is implemented based on this method, which is built on Pin platform at x86 binary level and using Z3 as the {SMT} (Satisfiability Modulo Theories) solver. The results of experiments verify that our approach is effective in increasing code coverage with remarkably lower resource and time cost than the standard fuzzing and concolic testing tools. The scale of fuzzing range and symbols are reduced, so as the computing resource and time consumption, especially when the input data is in highly structured and complex file format.},
+	eventtitle = {2015 11th International Conference on Computational Intelligence and Security ({CIS})},
+	pages = {385--389},
+	booktitle = {2015 11th International Conference on Computational Intelligence and Security ({CIS})},
+	author = {Li, J. and Xu, X. and Liao, L. and Li, L.},
+	date = {2015-12},
+	keywords = {Testing, Instruments, Software, Concrete, Security, computability, code coverage, Registers, complex file format, computing resource, concolic execution, concolic execution procedure, Concolic Fuzz, concolic testing tools, control flow analysis, controlflow, dynamic taint analysis, fuzzing range, fuzzing test, lower resource, Performance analysis, Satisfiability Modulo Theories, {SMT} solver, standard fuzzing, taint analysis, time consumption},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\Standard\\Zotero\\storage\\5M9424F6\\7397113.html:text/html;IEEE Xplore Full Text PDF:C\:\\Users\\Standard\\Zotero\\storage\\N6YIEIN8\\Li et al. - 2015 - Concolic Execute Fuzzing Based on Control-Flow Ana.pdf:application/pdf}
+}
+
+@inproceedings{liang_novel_2017,
+	title = {A Novel Method Makes Concolic System More Effective},
+	doi = {10.1109/CSCloud.2017.43},
+	abstract = {Fuzzing is attractive for finding vulnerabilities in binary programs. However, when the application's input space is huge, fuzzing cannot deal with it well. For discovering vulnerabilities more effective, researchers came up concolic testing, and there are much researches on it recently. A common limitation of concolic systems designed to create inputs is that they often concentrate on path-coverage and struggle to exercise deeper paths in the executable under test, but ignore to find those test cases which can trigger the vulnerabilities. In this paper, we present {TSM}, a novel method for finding potential vulnerabilities in concolic systems, which can help concolic systems more effective for hunting vulnerabilities. We implemented {TSM} method on a wide-used concolic testing tool-Fuzzgrind, and the evaluation experiments show that {TSM} can make Fuzzgrind hunt bugs quickly in real-world software, which are hardly found ever before.},
+	eventtitle = {2017 {IEEE} 4th International Conference on Cyber Security and Cloud Computing ({CSCloud})},
+	pages = {243--248},
+	booktitle = {2017 {IEEE} 4th International Conference on Cyber Security and Cloud Computing ({CSCloud})},
+	author = {Liang, H. and Li, Z. and Huang, M. and Pei, X.},
+	date = {2017-06},
+	keywords = {Tools, program testing, Testing, Instruments, Computer bugs, Software, program debugging, Fuzzing, bugs, Concolic, concolic systems, concolic testing tool, Explosions, Fuzzgrind, Pins, Symbolic Execution, Test Cases Generation, {TSM} method, vulnerabilities hunting},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\Standard\\Zotero\\storage\\Q2YYE42B\\7987205.html:text/html;IEEE Xplore Full Text PDF:C\:\\Users\\Standard\\Zotero\\storage\\G8PFS3XX\\Liang et al. - 2017 - A Novel Method Makes Concolic System More Effectiv.pdf:application/pdf}
+}
+
+@article{guo_dlfuzz:_2018,
+	title = {{DLFuzz}: Differential Fuzzing Testing of Deep Learning Systems},
+	url = {http://arxiv.org/abs/1808.09413},
+	doi = {10.1145/3236024.3264835},
+	shorttitle = {{DLFuzz}},
+	abstract = {Deep learning ({DL}) systems are increasingly applied to safetycritical domains such as autonomous driving cars. It is of significant importance to ensure the reliability and robustness of {DL} systems. Existing testing methodologies always fail to include rare inputs in the testing dataset and exhibit low neuron coverage. In this paper, we propose {DLFuzz}, the first differential fuzzing testing framework to guide {DL} systems exposing incorrect behaviors. {DLFuzz} keeps minutely mutating the input to maximize the neuron coverage and the prediction difference between the original input and the mutated input, without manual labeling effort or cross-referencing oracles from other {DL} systems with the same functionality. We present empirical evaluations on two well-known datasets to demonstrate its efficiency. Compared with {DeepXplore}, the state-of-the-art {DL} whitebox testing framework, {DLFuzz} does not require extra efforts to find similar functional {DL} systems for cross-referencing check, but could generate 338.59\% more adversarial inputs with 89.82\% smaller perturbations, averagely obtain 2.86\% higher neuron coverage, and save 20.11\% time consumption.},
+	journaltitle = {{arXiv}:1808.09413 [cs]},
+	author = {Guo, Jianmin and Jiang, Yu and Zhao, Yue and Chen, Quan and Sun, Jiaguang},
+	urldate = {2018-09-24},
+	date = {2018-08-28},
+	langid = {english},
+	eprinttype = {arxiv},
+	eprint = {1808.09413},
+	keywords = {Computer Science - Software Engineering},
+	file = {1808.09413.pdf:C\:\\Users\\Standard\\Zotero\\storage\\JBFVZJVP\\1808.09413.pdf:application/pdf}
+}
+
+@inproceedings{shoshitaishvili_sok:_2016,
+	location = {San Jose, {CA}},
+	title = {{SOK}: (State of) The Art of War: Offensive Techniques in Binary Analysis},
+	isbn = {978-1-5090-0824-7},
+	url = {http://ieeexplore.ieee.org/document/7546500/},
+	doi = {10.1109/SP.2016.17},
+	shorttitle = {{SOK}},
+	abstract = {Finding and exploiting vulnerabilities in binary code is a challenging task. The lack of high-level, semantically rich information about data structures and control constructs makes the analysis of program properties harder to scale. However, the importance of binary analysis is on the rise. In many situations binary analysis is the only possible way to prove (or disprove) properties about the code that is actually executed. In this paper, we present a binary analysis framework that implements a number of analysis techniques that have been proposed in the past. We present a systematized implementation of these techniques, which allows other researchers to compose them and develop new approaches. In addition, the implementation of these techniques in a unifying framework allows for the direct comparison of these approaches and the identiﬁcation of their advantages and disadvantages. The evaluation included in this paper is performed using a recent dataset created by {DARPA} for evaluating the effectiveness of binary vulnerability analysis techniques.},
+	eventtitle = {2016 {IEEE} Symposium on Security and Privacy ({SP})},
+	pages = {138--157},
+	booktitle = {2016 {IEEE} Symposium on Security and Privacy ({SP})},
+	publisher = {{IEEE}},
+	author = {Shoshitaishvili, Yan and Wang, Ruoyu and Salls, Christopher and Stephens, Nick and Polino, Mario and Dutcher, Andrew and Grosen, John and Feng, Siji and Hauser, Christophe and Kruegel, Christopher and Vigna, Giovanni},
+	urldate = {2018-09-24},
+	date = {2016-05},
+	langid = {english},
+	file = {Shoshitaishvili et al. - 2016 - SOK (State of) The Art of War Offensive Techniqu.pdf:C\:\\Users\\Standard\\Zotero\\storage\\4YPDTRVW\\Shoshitaishvili et al. - 2016 - SOK (State of) The Art of War Offensive Techniqu.pdf:application/pdf}
+}
+
+@inproceedings{liu_software_2012,
+	title = {Software Vulnerability Discovery Techniques: A Survey},
+	doi = {10.1109/MINES.2012.202},
+	shorttitle = {Software Vulnerability Discovery Techniques},
+	abstract = {Software vulnerabilities are the root cause of computer security problem. How people can quickly discover vulnerabilities existing in a certain software has always been the focus of information security field. This paper has done research on software vulnerability techniques, including static analysis, Fuzzing, penetration testing. Besides, the authors also take vulnerability discovery models as an example of software vulnerability analysis methods which go hand in hand with vulnerability discovery techniques. The ending part of the paper analyses the advantages and disadvantages of each technique introduced here and talks about the future direction of this field.},
+	eventtitle = {2012 Fourth International Conference on Multimedia Information Networking and Security},
+	pages = {152--156},
+	booktitle = {2012 Fourth International Conference on Multimedia Information Networking and Security},
+	author = {Liu, B. and Shi, L. and Cai, Z. and Li, M.},
+	date = {2012-11},
+	keywords = {program diagnostics, static analysis, Testing, fuzzing, Software, Security, security of data, Fuzzing, Accuracy, Computational modeling, computer security problem, Educational institutions, fuzzy set theory, penetration testing, Penetration testing, Software reliability, Software static analysis, software vulnerability analysis methods, software vulnerability discovery techniques, Vulnerability, vulnerability discovery model},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\Standard\\Zotero\\storage\\HYPLFQ4U\\6405650.html:text/html;IEEE Xplore Full Text PDF:C\:\\Users\\Standard\\Zotero\\storage\\JTWJLBDS\\Liu et al. - 2012 - Software Vulnerability Discovery Techniques A Sur.pdf:application/pdf}
+}
+
+@article{godefroid_automated_nodate,
+	title = {Automated Whitebox Fuzz Testing},
+	abstract = {Fuzz testing is an effective technique for ﬁnding security vulnerabilities in software. Traditionally, fuzz testing tools apply random mutations to well-formed inputs of a program and test the resulting values. We present an alternative whitebox fuzz testing approach inspired by recent advances in symbolic execution and dynamic test generation. Our approach records an actual run of the program under test on a well-formed input, symbolically evaluates the recorded trace, and gathers constraints on inputs capturing how the program uses these. The collected constraints are then negated one by one and solved with a constraint solver, producing new inputs that exercise different control paths in the program. This process is repeated with the help of a code-coverage maximizing heuristic designed to ﬁnd defects as fast as possible. We have implemented this algorithm in {SAGE} (Scalable, Automated, Guided Execution), a new tool employing x86 instruction-level tracing and emulation for whitebox fuzzing of arbitrary ﬁle-reading Windows applications. We describe key optimizations needed to make dynamic test generation scale to large input ﬁles and long execution traces with hundreds of millions of instructions. We then present detailed experiments with several Windows applications. Notably, without any format-speciﬁc knowledge, {SAGE} detects the {MS}07-017 {ANI} vulnerability, which was missed by extensive blackbox fuzzing and static analysis tools. Furthermore, while still in an early stage of development, {SAGE} has already discovered 30+ new bugs in large shipped Windows applications including image processors, media players, and ﬁle decoders. Several of these bugs are potentially exploitable memory access violations.},
+	pages = {16},
+	author = {Godefroid, Patrice and Levin, Michael Y and Molnar, David},
+	langid = {english},
+	file = {Godefroid et al. - Automated Whitebox Fuzz Testing.pdf:C\:\\Users\\Standard\\Zotero\\storage\\STJB9IKC\\Godefroid et al. - Automated Whitebox Fuzz Testing.pdf:application/pdf}
+}
+
+@inproceedings{stephens_driller:_2016,
+	location = {San Diego, {CA}},
+	title = {Driller: Augmenting Fuzzing Through Selective Symbolic Execution},
+	isbn = {978-1-891562-41-9},
+	url = {https://www.ndss-symposium.org/wp-content/uploads/sites/25/2017/09/driller-augmenting-fuzzing-through-selective-symbolic-execution.pdf},
+	doi = {10.14722/ndss.2016.23368},
+	shorttitle = {Driller},
+	abstract = {Memory corruption vulnerabilities are an everpresent risk in software, which attackers can exploit to obtain unauthorized access to conﬁdential information. As products with access to sensitive data are becoming more prevalent, the number of potentially exploitable systems is also increasing, resulting in a greater need for automated software vetting tools. {DARPA} recently funded a competition, with millions of dollars in prize money, to further research focusing on automated vulnerability ﬁnding and patching, showing the importance of research in this area. Current techniques for ﬁnding potential bugs include static, dynamic, and concolic analysis systems, which each having their own advantages and disadvantages. A common limitation of systems designed to create inputs which trigger vulnerabilities is that they only ﬁnd shallow bugs and struggle to exercise deeper paths in executables.},
+	eventtitle = {Network and Distributed System Security Symposium},
+	booktitle = {Proceedings 2016 Network and Distributed System Security Symposium},
+	publisher = {Internet Society},
+	author = {Stephens, Nick and Grosen, John and Salls, Christopher and Dutcher, Andrew and Wang, Ruoyu and Corbetta, Jacopo and Shoshitaishvili, Yan and Kruegel, Christopher and Vigna, Giovanni},
+	urldate = {2018-10-12},
+	date = {2016},
+	langid = {english},
+	file = {Stephens et al. - 2016 - Driller Augmenting Fuzzing Through Selective Symb.pdf:C\:\\Users\\Standard\\Zotero\\storage\\GWDTSB48\\Stephens et al. - 2016 - Driller Augmenting Fuzzing Through Selective Symb.pdf:application/pdf}
+}
+
+@inproceedings{cha_unleashing_2012,
+	title = {Unleashing Mayhem on Binary Code},
+	doi = {10.1109/SP.2012.31},
+	abstract = {In this paper we present Mayhem, a new system for automatically finding exploitable bugs in binary (i.e., executable) programs. Every bug reported by Mayhem is accompanied by a working shell-spawning exploit. The working exploits ensure soundness and that each bug report is security-critical and actionable. Mayhem works on raw binary code without debugging information. To make exploit generation possible at the binary-level, Mayhem addresses two major technical challenges: actively managing execution paths without exhausting memory, and reasoning about symbolic memory indices, where a load or a store address depends on user input. To this end, we propose two novel techniques: 1) hybrid symbolic execution for combining online and offline (concolic) execution to maximize the benefits of both techniques, and 2) index-based memory modeling, a technique that allows Mayhem to efficiently reason about symbolic memory at the binary level. We used Mayhem to find and demonstrate 29 exploitable vulnerabilities in both Linux and Windows programs, 2 of which were previously undocumented.},
+	eventtitle = {2012 {IEEE} Symposium on Security and Privacy},
+	pages = {380--394},
+	booktitle = {2012 {IEEE} Symposium on Security and Privacy},
+	author = {Cha, S. K. and Avgerinos, T. and Rebert, A. and Brumley, D.},
+	date = {2012-05},
+	keywords = {Engines, Computer bugs, Servers, Concrete, program debugging, concolic execution, active managing execution paths, binary codes, Binary codes, binary programs, binary-level, bug report, executable programs, exploit generation, hybrid execution, hybrid symbolic execution, index-based memory modeling, Linux programs, Mayhem, Memory management, offline execution, online execution, raw binary code, Switches, symbolic memory, symbolic memory indices, Windows programs, working shell-spawning exploit},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\Standard\\Zotero\\storage\\XTDLIHAN\\6234425.html:text/html;IEEE Xplore Full Text PDF:C\:\\Users\\Standard\\Zotero\\storage\\C73PYGIZ\\Cha et al. - 2012 - Unleashing Mayhem on Binary Code.pdf:application/pdf}
+}
+
+@article{tuteja_research_2012,
+	title = {A Research Study on importance of Testing and Quality Assurance in Software Development Life Cycle ({SDLC}) Models},
+	volume = {2},
+	abstract = {In recent years, software testing is becoming more popular and important in the software development industry. Indeed, software testing is a broad term encircling a variety of activities along the development cycle and beyond, aimed at different goals. Hence, software testing research faces a collection of challenges. A consistent roadmap of most relevant challenges is proposed here. In it, the starting point is constituted by some important past achievements, while the destination consists of two major identified goals to which research ultimately leads, but which remains as reachable as goals. The routes from the achievements to the goals are paved by outstanding research challenges, which are discussed in the paper along with the ongoing work.},
+	pages = {7},
+	number = {3},
+	author = {Tuteja, Maneela and Dubey, Gaurav},
+	date = {2012},
+	langid = {english},
+	file = {Tuteja and Dubey - 2012 - A Research Study on importance of Testing and Qual.pdf:C\:\\Users\\Standard\\Zotero\\storage\\NHAZ7YA4\\Tuteja and Dubey - 2012 - A Research Study on importance of Testing and Qual.pdf:application/pdf}
+}
+
+@inproceedings{bohme_directed_2017,
+	location = {Dallas, Texas, {USA}},
+	title = {Directed Greybox Fuzzing},
+	isbn = {978-1-4503-4946-8},
+	url = {http://dl.acm.org/citation.cfm?doid=3133956.3134020},
+	doi = {10.1145/3133956.3134020},
+	abstract = {Existing Greybox Fuzzers ({GF}) cannot be effectively directed, for instance, towards problematic changes or patches, towards critical system calls or dangerous locations, or towards functions in the stacktrace of a reported vulnerability that we wish to reproduce.},
+	eventtitle = {the 2017 {ACM} {SIGSAC} Conference},
+	pages = {2329--2344},
+	booktitle = {Proceedings of the 2017 {ACM} {SIGSAC} Conference on Computer and Communications Security  - {CCS} '17},
+	publisher = {{ACM} Press},
+	author = {Böhme, Marcel and Pham, Van-Thuan and Nguyen, Manh-Dung and Roychoudhury, Abhik},
+	urldate = {2018-10-14},
+	date = {2017},
+	langid = {english},
+	file = {Böhme et al. - 2017 - Directed Greybox Fuzzing.pdf:C\:\\Users\\Standard\\Zotero\\storage\\EM7IWCDA\\Böhme et al. - 2017 - Directed Greybox Fuzzing.pdf:application/pdf}
+}
+
+@article{liang_fuzzing:_2018,
+	title = {Fuzzing: State of the Art},
+	volume = {67},
+	issn = {0018-9529},
+	doi = {10.1109/TR.2018.2834476},
+	shorttitle = {Fuzzing},
+	abstract = {As one of the most popular software testing techniques, fuzzing can find a variety of weaknesses in a program, such as software bugs and vulnerabilities, by generating numerous test inputs. Due to its effectiveness, fuzzing is regarded as a valuable bug hunting method. In this paper, we present an overview of fuzzing that concentrates on its general process, as well as classifications, followed by detailed discussion of the key obstacles and some state-of-the-art technologies which aim to overcome or mitigate these obstacles. We further investigate and classify several widely used fuzzing tools. Our primary goal is to equip the stakeholder with a better understanding of fuzzing and the potential solutions for improving fuzzing methods in the spectrum of software testing and security. To inspire future research, we also predict some future directions with regard to fuzzing.},
+	pages = {1199--1218},
+	number = {3},
+	journaltitle = {{IEEE} Transactions on Reliability},
+	author = {Liang, H. and Pei, X. and Jia, X. and Shen, W. and Zhang, J.},
+	date = {2018-09},
+	keywords = {Computer bugs, Security, software testing, Software testing, security, Fuzzing, reliability, survey},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\Standard\\Zotero\\storage\\75XHMFKU\\8371326.html:text/html;IEEE Xplore Full Text PDF:C\:\\Users\\Standard\\Zotero\\storage\\P7ETY465\\Liang et al. - 2018 - Fuzzing State of the Art.pdf:application/pdf}
+}
+
+@inproceedings{cheng_tainttrace:_2006,
+	location = {Cagliari, Italy},
+	title = {{TaintTrace}: Efficient Flow Tracing with Dynamic Binary Rewriting},
+	isbn = {978-0-7695-2588-4},
+	url = {http://ieeexplore.ieee.org/document/1691114/},
+	doi = {10.1109/ISCC.2006.158},
+	shorttitle = {{TaintTrace}},
+	abstract = {{TaintTrace} is a high performance ﬂow tracing tool that protects systems against security exploits. It is based on dynamic execution binary rewriting empowering our tool with ﬁne-grained monitoring of system activities such as the tracking of the usage and propagation of data originated from the network. The challenge lies in minimizing the run-time overhead of the tool. {TaintTrace} uses a number of techniques such as direct memory mapping to optimize performance. In this paper, we demonstrate that {TaintTrace} is effective in protecting against various attacks while maintaining a modest slowdown of 5.5 times, offering signiﬁcant improvements over similar tools.},
+	eventtitle = {11th {IEEE} Symposium on Computers and Communications ({ISCC}'06)},
+	pages = {749--754},
+	booktitle = {11th {IEEE} Symposium on Computers and Communications ({ISCC}'06)},
+	publisher = {{IEEE}},
+	author = {Cheng, W. and {Qin Zhao} and {Bei Yu} and Hiroshige, S.},
+	urldate = {2019-02-19},
+	date = {2006},
+	langid = {english},
+	file = {Cheng et al. - 2006 - TaintTrace Efficient Flow Tracing with Dynamic Bi.pdf:C\:\\Users\\Standard\\Zotero\\storage\\5CV38DQC\\Cheng et al. - 2006 - TaintTrace Efficient Flow Tracing with Dynamic Bi.pdf:application/pdf}
+}
+
+@article{avijit_binary_2006,
+	title = {Binary rewriting and call interception for efficient runtime protection against buffer overflows},
+	volume = {36},
+	issn = {0038-0644, 1097-024X},
+	url = {http://doi.wiley.com/10.1002/spe.720},
+	doi = {10.1002/spe.720},
+	abstract = {Buffer overﬂow vulnerabilities are one of the most commonly and widely exploited security vulnerabilities in programs. Most existing solutions for avoiding buffer overﬂows are either inadequate, inefﬁcient or incompatible with existing code. In this paper, we present a novel approach for transparent and efﬁcient runtime protection against buffer overﬂows. The approach is implemented by two tools: Type Information Extractor and Depositor ({TIED}) and {LibsafePlus}. {TIED} is ﬁrst used on a binary executable or shared library ﬁle to extract type information from the debugging information inserted in the ﬁle by the compiler and reinsert it in the ﬁle as a data structure available at runtime. {LibsafePlus} is a shared library that is preloaded when the program is run. {LibsafePlus} intercepts unsafe C library calls such as strcpy and uses the type information made available by {TIED} at runtime to determine whether it would be ‘safe’ to carry out the operation. With our simple design we are able to protect most applications with a performance overhead of less than 10\%. Copyright c 2006 John Wiley \& Sons, Ltd.},
+	pages = {971--998},
+	number = {9},
+	journaltitle = {Software: Practice and Experience},
+	author = {Avijit, Kumar and Gupta, Prateek and Gupta, Deepak},
+	urldate = {2019-02-19},
+	date = {2006-07-25},
+	langid = {english},
+	file = {Avijit et al. - 2006 - Binary rewriting and call interception for efficie.pdf:C\:\\Users\\Standard\\Zotero\\storage\\LYSP2GLP\\Avijit et al. - 2006 - Binary rewriting and call interception for efficie.pdf:application/pdf}
+}
+
+@article{roy_hybrid_nodate,
+	title = {Hybrid binary rewriting for memory access instrumentation},
+	abstract = {Memory access instrumentation is fundamental to many applications such as software transactional memory systems, proﬁling tools and race detectors. We examine the problem of efﬁciently instrumenting memory accesses in x86 machine code to support software transactional memory and proﬁling. We aim to automatically instrument all shared memory accesses in critical sections of x86 binaries, while achieving overhead close to that obtained when performing manual instrumentation at the source code level.},
+	pages = {12},
+	author = {Roy, Amitabha and Hand, Steven and Harris, Tim},
+	langid = {english},
+	file = {Roy et al. - Hybrid binary rewriting for memory access instrume.pdf:C\:\\Users\\Standard\\Zotero\\storage\\C58PTSFE\\Roy et al. - Hybrid binary rewriting for memory access instrume.pdf:application/pdf}
+}
